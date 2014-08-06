@@ -7,8 +7,8 @@ print <<< EOF
 </head>
 <body>
     <form method="post">
-      <input type="text" name="posterName" size="30">
-      <input type="text" name="feederContent" size="120">
+      <input type="text" name="posterName" size="20">
+      <input type="text" name="feederContent" size="80">
     </form>
 </body>
 </html>
