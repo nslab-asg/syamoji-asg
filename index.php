@@ -8,9 +8,9 @@ print <<< EOF
 </head>
 <body>
     <form method="post">
-      <input type="text" name="posterName" size="20">
-      <input type="text" name="feederContent" size="80">
-      <button id="postButton">投稿</button>
+      <input type="text" id="posterName" size="20">
+      <input type="text" id="feederContent" size="80">
+      <button id="postButton" onClick="$.post('mongo_insert.php',{feederName: $('#posterName').val(), feederPost: $('#feederContent').val()}).done(function(){alert('done!');});">投稿</button>
     </form>
 </body>
 </html>

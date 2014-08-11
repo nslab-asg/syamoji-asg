@@ -15,7 +15,9 @@ date_default_timezone_set('Asia/Tokyo');
 // query string
 $a = array('name' => $name,
            'post' => $post,
-           'date' => date(DATE_RFC2822));
+           'date' => date(DATE_RFC2822),
+           'deleteFlag' => false
+);
 
 // insert
 $doc->insert($a);
