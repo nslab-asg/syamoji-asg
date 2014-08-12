@@ -5,9 +5,12 @@
 				$doc = $mongo->app28134254->feedCollection;
 
                 // find
-$feed = $doc->find(array('deleteFlag' => false));
+$feed = $doc->find(array('deleteFlag' => false))->sort(array('_id' => -1));
+
+foreach ($feed as $id => $obj) {
 
 
 				// log
-				print_r($feed);
+				print_r($obj);
+}
 ?>
