@@ -7,11 +7,10 @@ print <<< EOF
 <title>syamoji</title>
 </head>
 <body>
-    <form method="post">
-      <input type="text" id="posterName" size="20">
-      <input type="text" id="feederContent" size="80">
-      <button id="postButton" onClick="$.post('mongo_insert.php',{feederName: $('#posterName').val(), feederPost: $('#feederContent').val()}).done(function(){alert('done!');});">投稿</button>
-    </form>
+    <input type="text" id="posterName" size="20">
+    <input type="text" id="feederContent" size="80">
+    <button id="postButton" onClick="$.post('mongo_insert.php',{feederName: $('#posterName').val(), feederPost: $('#feederContent').val()}).done(function(){alert('done!'); $.get('mongo_get.php', function(data){ $('#feedPage').text(data)});});">投稿</button>
+    <div id="feedPage"></div>
 </body>
 </html>
 EOF;
