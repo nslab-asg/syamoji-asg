@@ -11,6 +11,8 @@ foreach ($feed as $id => $obj) {
 
 
 				// log
-				print_r($obj);
+				//print_r($obj);
+    print($obj[name]."「".$obj[post]."」"." at ".$obj[date]);
+    print("\n");
 }
 ?>

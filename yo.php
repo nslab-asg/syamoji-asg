@@ -7,6 +7,6 @@
 <meta charset="utf-8" />
 </head>
 <body>
-<button onClick='$.get("yo_call.php");'></button>
+<button onClick='$.get("yo_call.php");'>yo</button>
 </body>
 </html>
