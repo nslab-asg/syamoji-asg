@@ -1,6 +1,6 @@
 <?php
 
-$SECRET_KEY = 'secret key';
+$SECRET_KEY = 'd1728277fcde41c821a80e792ab3b09b';
 
 if (isset($_GET['key']) && $_GET['key'] === $SECRET_KEY)
 {
