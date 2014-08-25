@@ -1,18 +1,20 @@
 <?php
-				// db connection
-				$mongo = new MongoClient(getenv('MONGOHQ_URL'));
-				// select collection
-				$doc = $mongo->app28134254->feedCollection;
+// db connection
+$mongo = new MongoClient(getenv('MONGOHQ_URL'));
+// select collection
+$doc = $mongo->app28134254->feedCollection;
 
-                // find
+// find
 $feed = $doc->find(array('deleteFlag' => false))->sort(array('_id' => -1));
 
-foreach ($feed as $id => $obj) {
-
-
-				// log
-				//print_r($obj);
+foreach ($feed as $id => $obj) {   
+    // log
+    //print_r($obj);
+    // name post at date
     print($obj[name]."「".$obj[post]."」"." at ".$obj[date]);
+    
+    // del button
+    print("<button onclick='alert(".$obj[_id].");'>削除</button>")
     print("<br>");
 }
 ?>
