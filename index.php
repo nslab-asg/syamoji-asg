@@ -8,13 +8,14 @@ print <<< EOF
     $(document).ready(function(){
         $.get('mongo_get.php', function(data){ $('#feedPage').html(data)});
     });
+    var getBuf;
 </script>
 <title>syamoji</title>
 </head>
 <body>
     <input type="text" id="posterName" size="20">
     <input type="text" id="feederContent" size="80">
-    <button id="postButton" onClick="$.post('mongo_insert.php',{feederName: $('#posterName').val(), feederPost: $('#feederContent').val()}).done(function(){alert('done!'); $('#feederContent').val(''); $.get('mongo_get.php', function(data){ $('#feedPage').html(data)});});">投稿</button>
+    <button id="postButton" onClick="$.post('mongo_insert.php',{feederName: $('#posterName').val(), feederPost: $('#feederContent').val()}).done(function(){alert('done!'); $('#feederContent').val(''); $.get('mongo_get.php', function(data){ getBuf += data;}); $('#feedPage').html(getBuf); getBuf='';});">投稿</button>
     <div id="feedPage"></div>
 </body>
 </html>
