@@ -14,7 +14,8 @@ foreach ($feed as $id => $obj) {
     print($obj[name]."「".$obj[post]."」"." at ".$obj[date]);
     
     // del button
-    print("<button onclick='alert(\"".$obj[_id]."\");'>削除</button>");
+    //print("<button onclick='alert(\"".$obj[_id]."\");'>削除</button>");
+    print("<button onclick='alert(\"".$obj[_id]."\");<?php $doc->update(array('_id' => $obj[_id]), array('$set' => array('deleteFlag' => true))); ?>'>削除</button>");
     //print($obj[_id]);
     print("<br>");
 }
