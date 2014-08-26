@@ -9,7 +9,7 @@ $doc = $mongo->app28134254->feedCollection;
 
 if (isset($_GET['delId']))
 {
-    $gg = $doc->update(array('_id' => '53e8de53964c133e008b4567'), array('$set' => array('deleteFlag' => true)));
+    $gg = $doc->update(array('_id' => new \MongoId('53e8de53964c133e008b4567')), array('$set' => array('deleteFlag' => true)));
     print_r($gg);
     print($_GET['delId']);
 } else {
