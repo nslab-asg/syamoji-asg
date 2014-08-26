@@ -5,15 +5,18 @@ $mongo = new MongoClient(getenv('MONGOHQ_URL'));
 $doc = $mongo->app28134254->feedCollection;
 
 // find
-//$feed = $doc->find(array('deleteFlag' => false))->sort(array('_id' => -1));
+$feed = $doc->find(array('_id' => new \MongoId('53e8de53964c133e008b4567')));//false))->sort(array('_id' => -1));
 
 if (isset($_GET['delId']))
 {
-    $gg = $doc->update(array('_id' => new \MongoId('53e8de53964c133e008b4567')), array('$set' => array('deleteFlag' => true)));
-    print_r($gg);
-    print($_GET['delId']);
+    foreach($feed as $id => $obj) {   
+        $gg = $doc->update(array('_id' => $obj[_id]), array('$set' => array('deleteFlag' => true)));
+        print_r($gg);
+        print($_GET['delId']);
+    }   
 } else {
     return;
 }
+
 
 ?>
