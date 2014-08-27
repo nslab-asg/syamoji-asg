@@ -16,7 +16,7 @@ foreach ($feed as $id => $obj) {
     // del button
     //print("<button onclick='alert(\"".$obj[_id]."\");'>削除</button>");
     print("<button onclick='alert(\"".$obj[_id]."\");");
-    //print("$.get(\"mongo_del.php?delId=\"".$obj[_id]."\"\").done(function(){ $(\"#feederContent\").val(\"\");$.get(\"mongo_get.php\", function(data){ getBuf += data;});$(\"#feedPage\").html(getBuf); getBuf=\"\";});;");
+    print("$.get(\"mongo_del.php?delId=".$obj[_id]."\").done(function(){ $(\"#feederContent\").val(\"\");$.get(\"mongo_get.php\", function(data){ getBuf += data;});$(\"#feedPage\").html(getBuf); getBuf=\"\";});;");
     //$gg = $doc->update(array('_id' => $obj[_id]), array('$set' => array('deleteFlag' => true)));
     print("'>削除</button>");
     //print($obj[_id]);
