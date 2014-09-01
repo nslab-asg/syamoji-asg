@@ -16,7 +16,7 @@ foreach ($feed as $id => $obj) {
     print($obj[name]."</td><td class=\"feedViewUpside\">pen x</td></tr>");
     print("<tr><td class=\"feedViewMiddleside\">");
     print("「".$obj[post]."」</td></tr><tr><td class=\"feedViewDownside\">");
-    print(" at ".$obj[date]."</td></tr></table> <br>");
+    print(date('Y年n月j日 g時i分s秒', strtotime($obj[date]))."</td></tr></table> <br>");
     
     // del button
     //print("<button onclick='alert(\"".$obj[_id]."\");'>削除</button>");
