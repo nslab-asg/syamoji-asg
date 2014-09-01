@@ -3,6 +3,7 @@ print <<< EOF
 <html>
 <head>
 <meta charset="utf-8" />
+<link rel="stylesheet" href="css/feedStyle.css" />
 <script src="//ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
 <script>
     $(document).ready(function(){

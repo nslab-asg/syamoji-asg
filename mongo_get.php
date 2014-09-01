@@ -10,8 +10,13 @@ $feed = $doc->find(array('deleteFlag' => false))->sort(array('_id' => -1));
 foreach ($feed as $id => $obj) {   
     // log
     //print_r($obj);
+    // print table tag
+    print("<table border=0 cellspacing=0><tr><td rowspan=3>");
     // name post at date
-    print($obj[name]."「".$obj[post]."」"." at ".$obj[date]);
+    print($obj[name]."</td><td class=\"feedViewUpside\">pen x</td></tr>");
+    print("<tr><td class=\"feedViewMiddleside\">");
+    print("「".$obj[post]."」</td></tr><tr><td class=\"feedViewDownside\">");
+    print(" at ".$obj[date]."</td></tr></table> <br>");
     
     // del button
     //print("<button onclick='alert(\"".$obj[_id]."\");'>削除</button>");
